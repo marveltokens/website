@@ -1,0 +1,199 @@
+/* General styles */
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Arial', sans-serif;
+  color: #fff;
+  background: #0b0e13;
+  overflow-x: hidden;
+}
+
+/* Button styles */
+button {
+  background: transparent;
+  border: 2px solid #61dafb;
+  color: #61dafb;  /* Default text color */
+  padding: 10px 25px;
+  font-size: 1.2rem;
+  cursor: pointer;
+  border-radius: 30px;  /* Rounded button */
+  position: relative;
+  overflow: hidden;
+  transition: color 0.3s ease, border-color 0.3s ease;
+}
+
+/* Background animation */
+button::before {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: -100%;  /* Start from off-screen */
+  background: #61dafb;  /* Brush color */
+  z-index: 0;
+  transition: left 0.5s ease;
+}
+
+/* Hover effect: slide in the background */
+button:hover::before {
+  left: 0;  /* Move from left to right */
+}
+
+/* Text styling inside the button */
+button span {
+  position: relative;
+  z-index: 1;  /* Ensure text is above the background */
+  color: #61dafb;  /* Default text color */
+  transition: color 0.3s ease;  /* Smooth color transition */
+}
+
+/* Text color on hover */
+button:hover span {
+  color: #ffffff;  /* White text on hover */
+}
+
+/* Hover effect on the button itself */
+button:hover {
+  border-color: #4a9ecf;  /* Border color change on hover */
+}
+
+/* Header styles */
+header {
+  background: #15171c;
+  padding: 10px 20px;  /* Reduced padding for a thinner header */
+}
+
+.nav-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo h1 {
+  color: #61dafb;
+  font-size: 1.6rem;  /* Slightly smaller font size for a thinner appearance */
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  margin: 0;
+}
+
+nav ul li {
+  margin-left: 15px;  /* Adjust margin between nav items */
+}
+
+nav ul li a {
+  color: #fff;
+  text-decoration: none;
+  transition: color 0.3s ease;
+  font-size: 1rem;  /* Adjust font size if necessary */
+}
+
+nav ul li a:hover {
+  color: #61dafb;
+}
+
+/* Hero section */
+.hero {
+  height: 100vh;
+  background: url('captain_america_bg.jpg') no-repeat center center/cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  position: relative;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 1;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 100%;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.hero-content h2 {
+  font-size: 4rem;
+  margin-bottom: 20px;
+  color: #61dafb;
+}
+
+.hero-content p {
+  font-size: 1.5rem;
+  margin-bottom: 40px;
+  max-width: 100%;
+  color: #ddd;
+}
+
+/* Container */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 50px 20px;
+}
+
+/* Section styles */
+.section {
+  padding: 50px 20px;
+}
+
+/* Alternating grey shades */
+.section:nth-of-type(even) {
+  background-color: #1c1f24; /* Darker grey for even sections */
+}
+
+.section:nth-of-type(odd) {
+  background-color: #2c2f34; /* Lighter grey for odd sections */
+}
+
+/* Specific section styles */
+.about, .benefits, .buy {
+  background: none; /* Override the alternating grey if needed */
+}
+
+h2 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  color: #61dafb;
+}
+
+/* Adjust spacing between bullet points */
+ul {
+  padding-left: 20px;  /* Add some padding to ensure bullets are not too close to the text */
+}
+
+ul li {
+  margin-bottom: 15px;  /* Increase space between list items */
+  line-height: 1.6;  /* Adjust line height for better readability */
+}
+
+.about p,
+.benefits ul,
+.buy p {
+  margin-bottom: 30px;
+}
+
+footer {
+  background: #15171c;
+  padding: 30px 0;
+  text-align: center;
+}
+
+footer p {
+  color: #999;
+}
